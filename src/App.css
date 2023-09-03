@@ -7,7 +7,9 @@ html body {
   height: 100%;
 }
 
-
+.red{
+  color: #FF4F42;
+}
 
 .landing-header{
   z-index: 5;
