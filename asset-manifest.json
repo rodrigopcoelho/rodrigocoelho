@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a7ccbe8b.css",
+    "main.js": "/static/js/main.7a784f19.js",
+    "static/js/787.ff130967.chunk.js": "/static/js/787.ff130967.chunk.js",
+    "static/media/me-bw.png": "/static/media/me-bw.c302ed801fb6f06d12fe.png",
+    "static/media/polaroid.png": "/static/media/polaroid.b7afbdd70582e6621fd5.png",
+    "static/media/banner.svg": "/static/media/banner.1a6b3af6b19b6d87b2234609abad8fab.svg",
+    "static/media/portfoliolanding.svg": "/static/media/portfoliolanding.62907faec9a770367b83.svg",
+    "index.html": "/index.html",
+    "main.a7ccbe8b.css.map": "/static/css/main.a7ccbe8b.css.map",
+    "main.7a784f19.js.map": "/static/js/main.7a784f19.js.map",
+    "787.ff130967.chunk.js.map": "/static/js/787.ff130967.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a7ccbe8b.css",
+    "static/js/main.7a784f19.js"
+  ]
+}
