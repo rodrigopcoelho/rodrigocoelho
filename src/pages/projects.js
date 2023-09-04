@@ -1,14 +1,19 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Matter from "matter-js";
+import { useHistory } from 'react-router-dom';
 
-class Scene extends React.Component {
+class Projects extends React.Component {
+
+
   constructor(props) {
     super(props);
     this.state = {};
+
   }
 
+
   componentDidMount() {
+
     var Engine = Matter.Engine,
         Render = Matter.Render,
         Runner = Matter.Runner,
@@ -100,7 +105,7 @@ Bodies.circle(10, 10, 150, {
   }
 
   render() {
-    return <><div className='d-flex justify-content-between py-2 px-3 bg-transparent'><h1 className="red">PROJECTS</h1>  <h1>ABOUT ME</h1>  </div><div ref="scene" >  </div></>;
+    return <><div className='d-flex justify-content-between py-2 px-3 bg-transparent'><h1 className="red">PROJECTS</h1>  <h1 onClick={this.navigateToAbout} >ABOUT ME</h1>  </div><div ref="scene" >  </div></>;
   }
 }
-export default Scene;
+export default Projects;

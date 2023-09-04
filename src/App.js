@@ -3,14 +3,16 @@ import './App.css';
 import Home from './pages/home';
 import Landing from './pages/landing';
 import Projects from "./pages/projects";
+import About from "./pages/about";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-      <Route path="/" element={<Landing />} />
+        <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </div>
   );
