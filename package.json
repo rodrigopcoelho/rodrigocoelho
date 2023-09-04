@@ -1,7 +1,7 @@
 {
   "name": "rodrigocoelho",
   "version": "0.1.0",
-  "landing": "https://rodrigopcoelho.github.io/",
+  "homepage": "https://rodrigopcoelho.github.io/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
