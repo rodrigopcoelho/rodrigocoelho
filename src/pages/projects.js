@@ -1,20 +1,18 @@
 import React from 'react'
-import Scene from './Scene';
-import { useNavigate } from "react-router-dom";
+import Navbar from "../components/navbar";
+import Bublles from "../components/bubbles";
+
 
 
 function Projects() {
-  const navigate = useNavigate();
 
-
-  const about = () => {
-    navigate("/about");
-  }
 
   return (
     <div>
-    <div className='d-flex justify-content-between py-2 px-3 bg-transparent'><h1 className="red aA">PROJECTS</h1>  <h1 className="pA" onClick={about} style={{cursor: "pointer", color: "black"} } >ABOUT ME</h1>  </div>
-    <Scene />
+    <Navbar active={1} white={1}/>
+
+    <Bublles/>
+
     </div>
   )
 }

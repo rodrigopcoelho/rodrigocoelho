@@ -148,6 +148,7 @@ html body {
   right: 400px;
   width: 300px;
 }
+/* NAVBAR */
 .aA{
 color: #FF4F42;
 text-align: center;
@@ -170,4 +171,61 @@ font-weight: 200;
 line-height: normal;
 letter-spacing: 5.325px;
 text-transform: uppercase;
+}
+.circlehome{
+width: 305px;
+height: 160px;
+flex-shrink: 0;
+border-radius: 0 0 12rem 12rem;
+background: #FFF;
+position: relative;
+bottom: 20px;
+border:none;
+
+}
+.hA{
+  position: relative;
+  top: 20px;
+color: #1820EF;
+text-align: center;
+font-family: "M PLUS 1";
+font-size: 71px;
+font-style: normal;
+font-weight: 200;
+line-height: normal;
+letter-spacing: 5.325px;
+text-transform: uppercase;
+}
+
+.frame {
+  overflow: scroll;
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 66px 66px;
+  height: 791px;
+  justify-content: flex-end;
+  padding: 0px 81px;
+  width: 100%;
+}
+
+.frame .ellipse {
+  background-color: #1820ef;
+  border-radius: 266.5px;
+  height: 533px;
+  width: 533px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame .div {
+  background-color: #1820ef;
+  border-radius: 266.5px;
+  height: 533px;
+  margin-bottom: -341px;
+
+
+  width: 533px;
 }

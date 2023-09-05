@@ -1,30 +1,17 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import Navbar from "../components/navbar";
 
 function About() {
-  const navigate = useNavigate();
 
-  const projects = () => {
-    navigate("/projects");
-  };
-  const about = () => {
-    navigate("#");
-  };
   return (
 
     <div className="backblue">
-      <div className="d-flex justify-content-between py-2 px-3 text-white">
-
-        <h1  className="red aA" onClick={about} style={{cursor: "pointer"}}>
-          ABOUT ME
-        </h1>
-        <h1 className="pA" onClick={projects} style={{cursor: "pointer"}}>PROJECTS</h1>
-      </div>
+      <Navbar active={0}  white={0}/>
       <div className="d-flex align-items-center ">
-        <div className="full-height-container d-flex flex-column justify-content-around px-3">
+        <div className="full-height-container d-flex flex-column justify-content-around px-3 pb-5">
           <h1 className="text-start">ABOUT</h1>
           <h1 className="text-start">SKILLS</h1>
-          <h1 className="text-start  mb-5">EDUCATION</h1>
+          <h1 className="text-start mb-5">EDUCATION</h1>
         </div>
 
         <div className="divabout pb-5">
