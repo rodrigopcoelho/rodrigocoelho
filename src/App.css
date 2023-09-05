@@ -148,3 +148,26 @@ html body {
   right: 400px;
   width: 300px;
 }
+.aA{
+color: #FF4F42;
+text-align: center;
+font-family: "M PLUS 1";
+font-size: 71px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 5.325px;
+text-transform: uppercase;
+}
+
+.pA{
+  color: #FFF;
+text-align: center;
+font-family: "M PLUS 1";
+font-size: 71px;
+font-style: normal;
+font-weight: 200;
+line-height: normal;
+letter-spacing: 5.325px;
+text-transform: uppercase;
+}
