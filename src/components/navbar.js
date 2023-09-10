@@ -20,7 +20,7 @@ function Navbar({ active, white}) {
 
   return (
 
-    <div className="d-flex justify-content-between py-2 px-3 text-white">
+    <div className="d-flex justify-content-between py-2 px-3 text-white ">
 
     <h1  className={active === 1 ? "pA" : "aA "} onClick={about} style={{cursor: "pointer", color: white === 1 ? "#1820EF" : " "}}>
       ABOUT ME

@@ -1,7 +1,28 @@
-import React from "react";
+import React , { useState, useEffect } from 'react';
 import Navbar from "../components/navbar";
+import transition from '../transition';
 
 function About() {
+  const [isHighlighted, setIsHighlighted] = useState(false);
+
+  useEffect(() => {
+    if (isHighlighted) {
+      // Add the CSS class when isHighlighted is true
+      // You can use a class name or inline styles as desired
+      document.getElementById('elementId').classList.add('red');
+
+      // Remove the CSS class after a delay (e.g., 2 seconds)
+      const timeoutId = setTimeout(() => {
+        document.getElementById('elementId').classList.remove('red');
+        setIsHighlighted(false);
+      }, 2000);
+
+      // Clean up the timeout to avoid memory leaks
+      return () => clearTimeout(timeoutId);
+    }
+  }, [isHighlighted]);
+
+  //setIsHighlighted(true);
 
   return (
 
@@ -11,7 +32,7 @@ function About() {
         <div className="full-height-container d-flex flex-column justify-content-around px-3 pb-5">
           <h1 className="text-start">ABOUT</h1>
           <h1 className="text-start">SKILLS</h1>
-          <h1 className="text-start mb-5">EDUCATION</h1>
+          <h1 className="text-start pb-3 mb-5">EDUCATION</h1>
         </div>
 
         <div className="divabout pb-5">
@@ -38,11 +59,11 @@ function About() {
           <p>Full Stack Web Development<br/><br/></p>
           <p></p>
           <p>Aveiro University </p>
-          <p className="pb-4">Degree in Multimedia and Communication Technologies</p>
+          <p className="pb-5 mb-5">Degree in Multimedia and Communication Technologies</p>
         </div>
       </div>
     </div>
   );
 }
 
-export default About;
+export default transition(About);
