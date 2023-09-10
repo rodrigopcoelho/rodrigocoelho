@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import banner from '../assets/svg/banner.svg';
 import polaroid from '../assets/img/polaroid.png';
 import { useNavigate } from "react-router-dom";
-import transition from '../transition';
+import { motion } from "framer-motion";
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
@@ -50,6 +50,21 @@ const Home = () => {
         </>
       ) : (
         <>
+         <motion.div
+        className="slide-in"
+        initial={{ scaleY: 0 }}
+        animate={{ scaleY: 0 }}
+        exit={{ scaleY: 1 }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+      />
+      
+       <motion.div
+        className="slide-out"
+        initial={{ scaleY: 1 }}
+        animate={{ scaleY: 0 }}
+        exit={{ scaleY: 0 }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+      />
           <div className="d-flex left-side align-items-end ">
             <img src={banner} alt="banner" className="banner" />
           </div>
@@ -84,4 +99,4 @@ const Home = () => {
   );
 };
 
-export default transition(Home);
+export default Home;
