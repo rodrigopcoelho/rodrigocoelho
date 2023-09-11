@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from "../components/navbar";
 import Bublles from "../components/bubbles";
+import '../Projects.css';
 import { motion } from "framer-motion";
 
 
@@ -10,7 +11,7 @@ function Projects() {
 
   return (
     <div>
-      
+
       <motion.div
         className="slide-in"
         initial={{ scaleY: 0 }}
