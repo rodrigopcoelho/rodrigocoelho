@@ -1,0 +1,73 @@
+
+.landing-header{
+  z-index: 5;
+  position: absolute;
+  background-image: url("./assets/svg/portfoliolanding.svg");
+  width: 100%;
+  height:100vh;
+  background-size: cover;
+}
+
+.loading-header{
+  z-index: 1;
+  background-color: #FF4F42;
+  width: 100%;
+}
+
+.home{
+  width: 100%;
+  height:100vh;
+}
+
+.right-side{
+  background-color: #1820EF;
+  width: 100%;
+  height:100vh;
+}
+
+.right-side p {
+  color: #FF4F42;
+  text-align: right;
+  font-family: "M PLUS 1";
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 169.3%;
+  z-index: 4;
+
+}
+
+.right-side h1{
+
+    color: #FFF;
+    font-family: "M PLUS 1";
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    letter-spacing: 5.325px;
+    text-transform: uppercase;
+
+}
+
+.left-side{
+  background-image: url("./assets/img/me-bw.png");
+  background-size: cover;
+  width: 100%;
+  height:100vh;
+}
+
+
+
+.banner{
+  z-index: 5;
+  width: 100%;
+}
+
+.polaroid{
+  z-index: 2;
+  position: absolute;
+  bottom:111px;
+  right: 400px;
+  width: 300px;
+}

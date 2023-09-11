@@ -1,31 +1,52 @@
 import React , { useState, useEffect } from 'react';
 import Navbar from "../components/navbar";
-import { motion } from "framer-motion";
+import Abouttext from "../components/abouttext";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion"
+import '../About.css';
+
 
 function About() {
+  const { scrollYProgress } = useScroll();
   const [isHighlighted, setIsHighlighted] = useState(false);
+  const [myValue, setMyValue] = useState(0);
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    //console.log("Page scroll: ", latest)
+    setMyValue(latest);
+    setIsHighlighted(true)
+  })
 
   useEffect(() => {
+    const about = document.getElementById('about');
+    const skill = document.getElementById('skill');
+    const edu = document.getElementById('edu');
+
     if (isHighlighted) {
-      // Add the CSS class when isHighlighted is true
-      // You can use a class name or inline styles as desired
-      document.getElementById('elementId').classList.add('red');
+      about.classList.remove('red');
+      skill.classList.remove('red');
+      edu.classList.remove('red');
+      console.log(myValue);
 
-      // Remove the CSS class after a delay (e.g., 2 seconds)
-      const timeoutId = setTimeout(() => {
-        document.getElementById('elementId').classList.remove('red');
-        setIsHighlighted(false);
-      }, 2000);
-
-      // Clean up the timeout to avoid memory leaks
-      return () => clearTimeout(timeoutId);
+      if (myValue >= 0 && myValue < 0.35) {
+        about.classList.add('red');
+      } else if (myValue >= 0.35 && myValue < 0.60) {
+        skill.classList.add('red');
+      } else if (myValue >= 0.60) {
+        edu.classList.add('red');
+      }
+    } else {
+      // Remove 'red' class when isHighlighted is false
+      about.classList.remove('red');
+      skill.classList.remove('red');
+      edu.classList.remove('red');
     }
-  }, [isHighlighted]);
+  }, [isHighlighted, myValue]);
 
-  //setIsHighlighted(true);
+
 
   return (
 <>
+
 <motion.div
         className="slide-in"
         initial={{ scaleY: 0 }}
@@ -41,40 +62,21 @@ function About() {
         exit={{ scaleY: 0 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
       />
+
     <div className="backblue">
       <Navbar active={0}  white={0}/>
+
       <div className="d-flex align-items-center ">
-        <div className="full-height-container d-flex flex-column justify-content-around px-3 pb-5">
-          <h1 className="text-start">ABOUT</h1>
-          <h1 className="text-start">SKILLS</h1>
-          <h1 className="text-start pb-3 mb-5">EDUCATION</h1>
+
+        <div className="full-height-container d-flex flex-column justify-content-around fixed-top">
+          <h1 id="about" className="text-start">ABOUT</h1>
+          <h1 id="skill" className="text-start" >SKILLS</h1>
+          <h1 id="edu" className="text-start ">EDUCATION</h1>
         </div>
 
-        <div className="divabout pb-5">
-          <h3>ABOUT</h3>
-          <p>
-            Full-Stack Developer with extensive experience as a front-end and
-            web designer, with a degree in Technology and Communication. <br/><br/>I have
-            experience in various projects. The ability to quickly learn and
-            apply new technologies is one of my strongest assets.<br/><br/> A degree and
-            an intensive bootcamp taught me the importance of priorities and
-            teamwork. I am a diligent, creative, and curious professional who
-            always enjoys learning more. I have a positive approach and enjoy
-            challenges that allow me to enhance my skills.<br/><br/>
-          </p>
-          <h3>SKILLS</h3>
-          <p>
-            <span className="red">Programming Languages</span><br/> Ruby, JavaScript, HTML, CSS, Python, C#,
-            kotlin<br/><br/> <span className="red">Frameworks/Libraries</span><br/> React, Rails, Bootstrap, Ajax, Jetpack
-            Compose<br/><br/> <span className="red">Databases/ORM</span><br/> SQL, FireBase, Neo4j, SQLite, Postgresql,
-            Node.js<br/><br/> <span className="red">Other</span><br/> Git, GitHub, Heroku, REST API, Figma, Blender, Unity3d
-            <br/><br/></p>
-          <h3>EDUCATION</h3>
-          <p>Le Wagon</p>
-          <p>Full Stack Web Development<br/><br/></p>
-          <p></p>
-          <p>Aveiro University </p>
-          <p className="pb-5 mb-5">Degree in Multimedia and Communication Technologies</p>
+        <motion.div className="progress-bar fixed-bottom" style={{ scaleX: scrollYProgress }} />
+        <div className="divabout">
+        <Abouttext/>
         </div>
       </div>
     </div>
