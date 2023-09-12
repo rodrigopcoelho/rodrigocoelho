@@ -71,3 +71,18 @@
   right: 400px;
   width: 300px;
 }
+
+.divlink{
+  position: absolute;
+  top:0;
+}
+
+.git{
+  width: 70px;
+  
+}
+
+.link{
+
+  width: 70px;
+}

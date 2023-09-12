@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import '../Home.css';
 import banner from '../assets/svg/banner.svg';
+import git from '../assets/svg/git.svg';
+import link from '../assets/svg/link.svg';
 import polaroid from '../assets/img/polaroid.png';
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -8,6 +10,8 @@ import { motion } from "framer-motion";
 const Home = () => {
   const [loading, setLoading] = useState(false);
   const [loadingHeight, setLoadingHeight] = useState(0);
+
+
 
   useEffect(() => {
     // Check if the loading screen has already been displayed
@@ -39,6 +43,16 @@ const Home = () => {
     navigate('/about');
   };
 
+  const handleGit = () => {
+    // 👇️ replace set to true
+    window.location.replace('https://github.com/rodrigopcoelho');
+  };
+
+  const handleLink = () => {
+    // 👇️ replace set to true
+    window.location.replace('https://www.linkedin.com/in/rodrigopcoelho/');
+  };
+
   return (
     <div className="d-flex justify-content-center">
       {loading ? (
@@ -67,6 +81,7 @@ const Home = () => {
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
       />
           <div className="d-flex left-side align-items-end ">
+            <div className="d-flex divlink mt-2 ms-3"><img src={git} className="git me-2" onClick={handleGit} style={{cursor: "pointer"}}/><img src={link} onClick={handleLink} className="git" style={{cursor: "pointer"}}/></div>
             <img src={banner} alt="banner" className="banner" />
           </div>
 
